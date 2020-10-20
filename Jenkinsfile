@@ -1,5 +1,6 @@
 pipeline{
     agent { label 'master'}
+    stages{
         stage('Upload to Nexus'){
             when {
                 branch 'develop'
@@ -37,3 +38,4 @@ pipeline{
         }
 
     }
+}
