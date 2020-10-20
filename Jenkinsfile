@@ -53,7 +53,7 @@ pipeline{
                 branch 'master'
             }
             steps{
-                echo "coming soon.."
+                echo "coming soon. ."
             }
         }
 
