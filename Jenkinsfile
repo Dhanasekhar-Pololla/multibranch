@@ -45,7 +45,4 @@ pipeline{
                 echo "coming soon. ."
             }
         }
-
     }
-}
-}
