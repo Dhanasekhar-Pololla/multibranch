@@ -16,7 +16,7 @@ pipeline{
                         nexusUrl: '172.31.30.108:8081',
                         nexusVersion: 'nexus3',
                         protocol: 'http', 
-                        repository: 'http://3.23.20.245:8081/repository/Dhana-app/', 
+                        repository: 'Dhana-app', 
                         version: '2.0-SNAPSHOT'
                 }
             }
