@@ -7,16 +7,17 @@ pipeline{
             }
             steps{
                 script {
+                    def pom=readMavenPom file: 'pom.xml'
                     nexusArtifactUploader artifacts: [
                         [artifactId: 'multibranch', classifier: '', file: 'target/*.war', type: 'war']
                     ], 
                         credentialsId: 'nexus3', 
-                        groupId: 'in.javahome', 
+                        groupId: pom.groupId, 
                         nexusUrl: '172.31.30.108:8081',
                         nexusVersion: 'nexus3',
                         protocol: 'http', 
                         repository: 'Dhana-app', 
-                        version: '2.0-SNAPSHOT'
+                        version: pom.version
                 }
             }
         }
