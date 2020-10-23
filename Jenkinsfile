@@ -6,8 +6,7 @@ pipeline{
                 branch 'develop'
             }
             steps{
-                script{
-                    def pom = readMavenPom file: 'pom.xml'
+                script {
                     def repository = pom.version.endsWith('SNAPSHOT') ? 'javahome-app-snapshot' : 'javahome-app'
                     nexusArtifactUploader artifacts: [
                         [artifactId: 'multibranch', classifier: '', file: 'target/multibranch.war', type: 'war']
