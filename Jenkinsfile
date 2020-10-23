@@ -9,15 +9,15 @@ pipeline{
                 script {
                     def repository = pom.version.endsWith('SNAPSHOT') ? 'javahome-app-snapshot' : 'javahome-app'
                     nexusArtifactUploader artifacts: [
-                        [artifactId: 'multibranch', classifier: '', file: 'target/multibranch.war', type: 'war']
+                        [artifactId: 'multibranch', classifier: '', file: 'target/*.war', type: 'war']
                     ], 
-                    credentialsId: 'nexus3', 
-                    groupId: pom.groupId, 
-                    nexusUrl: '172.31.70.16:8081', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: repository, 
-                    version: pom.version
+                        credentialsId: 'nexus3', 
+                        groupId: 'in.javahome', 
+                        nexusUrl: '172.31.30.108:8081',
+                        nexusVersion: 'nexus3',
+                        protocol: 'http', 
+                        repository: 'http://3.23.20.245:8081/repository/Dhana-app/', 
+                        version: '2.0-SNAPSHOT'
                 }
             }
         }
