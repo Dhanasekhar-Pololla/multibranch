@@ -9,7 +9,7 @@ pipeline{
                 script {
                     def repository = pom.version.endsWith('SNAPSHOT') ? 'javahome-app-snapshot' : 'javahome-app'
                     nexusArtifactUploader artifacts: [
-                        [artifactId: 'multibranch', classifier: '', file: 'target/*.war', type: 'war']
+                        [artifactId: 'multibranch', classifier: '', file: 'target/multibranch.war', type: 'war']
                     ], 
                         credentialsId: 'nexus3', 
                         groupId: 'in.javahome', 
