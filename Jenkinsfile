@@ -25,7 +25,6 @@ pipeline{
                     version: '1.0'
             }
         }
-        stage
 
         stage('Deploy to Dev'){
             when {
