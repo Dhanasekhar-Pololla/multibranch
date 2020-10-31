@@ -1,6 +1,14 @@
 pipeline{
     agent { label 'master'}
     stages{
+        stage("build & SonarQube analysis") {
+            agent any
+            steps {
+              withSonarQubeEnv('sonar7') {
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+          }
         stage('Upload to Nexus'){
             when {
                 branch 'develop'
@@ -18,6 +26,7 @@ pipeline{
                     version: '1.0'
             }
         }
+        stage
 
         stage('Deploy to Dev'){
             when {
