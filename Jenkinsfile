@@ -2,7 +2,6 @@ pipeline{
     agent { label 'master'}
     stages{
         stage("build & SonarQube analysis") {
-            agent any
             steps {
               withSonarQubeEnv('sonar7') {
                 sh 'mvn clean package sonar:sonar'
