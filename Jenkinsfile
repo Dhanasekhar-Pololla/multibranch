@@ -9,7 +9,7 @@ pipeline{
                 branch 'develop'
             }
             steps{
-                sh "mvn clean package"
+                sh "mvn clean package" 
             }
         }
         stage("Sonar Analysis"){
@@ -81,7 +81,7 @@ pipeline{
                 branch 'master'
             }
             steps{
-                echo "coming soon.."
+                echo "coming soon.. "
             }
         }
 
