@@ -36,7 +36,7 @@ pipeline{
                 branch 'develop'
             }
             steps{
-                echo "coming soon.. "
+                echo "coming soon.."
             }
         }
 
